@@ -14,12 +14,14 @@
     position: relative;
     img {
         position: absolute;
-        width: 150px;
+        width: 140px;
         height: 200px;
+        border-radius: 15px;
     }
 }
 
 .topCard {
+    border-radius: 15px;
     cursor: pointer;
     transition: all 125ms ease-in-out;
     &:hover {
@@ -60,7 +62,7 @@
 .addButton {
     position: absolute;
     right: 32px;
-    bottom: 32px;
+    bottom: 42px;
 }
 
 .rulesCard {
