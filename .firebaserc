@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ringoffire-heusinger": {
+      "hosting": {
+        "ringoffire": [
+          "ringoffire-heusinger"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ringoffire-heusinger"
+  }
+}

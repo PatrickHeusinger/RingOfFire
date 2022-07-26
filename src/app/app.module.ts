@@ -18,6 +18,7 @@ import { GameRulesComponent } from './game-rules/game-rules.component';
 import { MatCardModule } from '@angular/material/card';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
 
 
 
@@ -44,7 +45,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    provideDatabase(() => getDatabase())
   ],
   providers: [],
   bootstrap: [AppComponent]
