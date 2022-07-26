@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyD1q-bjorFDXUXGPdyoeBXE0obEWYElMnc",
+    authDomain: "ringoffire-heusinger.firebaseapp.com",
+    projectId: "ringoffire-heusinger",
+    storageBucket: "ringoffire-heusinger.appspot.com",
+    messagingSenderId: "770253169346",
+    appId: "1:770253169346:web:7a8363cc094a8c7d07115b"
+  }
+  
 };
 
 /*
