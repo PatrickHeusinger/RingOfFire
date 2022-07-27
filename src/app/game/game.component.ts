@@ -41,6 +41,7 @@ export class GameComponent implements OnInit {
     });
 
     }); 
+    
 }
 
   newGame(){
@@ -51,7 +52,7 @@ export class GameComponent implements OnInit {
     if(!this.game.pickCardAnimation){
     this.game.currentCard = this.game.stack.pop();
     this.game.pickCardAnimation = true;
-    
+
     console.log(this.game.currentCard);
     console.log('CurrentCard ' + this.game.currentCard);
     console.log(this.game);
@@ -62,6 +63,9 @@ export class GameComponent implements OnInit {
     setTimeout(() => {
       this.game.playedCards.push(this.game.currentCard);
       this.game.pickCardAnimation = false;
+      if(this.game.stack == []){
+        location.reload();
+      };
       this.saveGame();
     }, 1000);
   }
