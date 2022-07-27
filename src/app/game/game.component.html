@@ -8,10 +8,10 @@
         <!-- Stack for played cards -->
         <img *ngFor="let card of game.playedCards" class="playedCard" src="assets/playing_cards/{{ card }}.png">
         <!-- Current card (Animation) -->
-        <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pickCard" style="right: 25px" src="assets/playing_cards/{{ currentCard }}.png">
+        <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class="pickCard" style="right: 25px" src="assets/playing_cards/{{ game.currentCard }}.png">
     </div>
 </div>
-<app-game-rules [card]="currentCard" class="rulesCard"></app-game-rules>
+<app-game-rules [card]="game.currentCard" class="rulesCard"></app-game-rules>
 
 <button mat-fab color="primary" (click)="openDialog()" class="addButton">
     <mat-icon>add</mat-icon>

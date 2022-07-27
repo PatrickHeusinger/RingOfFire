@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StartscreenComponent } from './startscreen/startscreen.component';
@@ -16,12 +15,11 @@ import { MatInputModule }  from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { GameRulesComponent } from './game-rules/game-rules.component';
 import { MatCardModule } from '@angular/material/card';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-
-
-
+//import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+//import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+//import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 
 
 @NgModule({
@@ -35,8 +33,7 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     GameRulesComponent
   ],
   imports: [
-    provideFirebaseApp(() => initializeApp({ })),
-    provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
@@ -46,7 +43,12 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     MatInputModule,
     FormsModule,
     MatCardModule,
-    provideDatabase(() => getDatabase())
+  //  provideFirebaseApp(() => initializeApp(environment.firebase)),
+  //  provideAuth(() => getAuth()),
+  //  provideDatabase(() => getDatabase()),
+  //  provideFirestore(() => getFirestore()),
+   
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
