@@ -41,7 +41,7 @@ export class GameComponent implements OnInit {
     });
 
     }); 
-    this.cardStack();
+   
 }
 
   newGame(){
@@ -69,6 +69,7 @@ export class GameComponent implements OnInit {
   }else{
     if(this.game.stack.length == 0){
       this.newGame();
+      this.game.players = [];
     };
   }
   }
@@ -91,12 +92,13 @@ saveGame(){
  this.firestore.collection('games').doc(this.gameId).update(this.game.toJson());
  }
 
+ /*
  cardStack(){
   for (let index = 0; index < this.game.stack.length; index++) {
     const cardsStack = this.game.stack[index];
     console.log(cardsStack);
     
   }
-}
+ }*/
 }
 
