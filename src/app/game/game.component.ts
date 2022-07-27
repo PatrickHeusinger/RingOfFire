@@ -49,7 +49,7 @@ export class GameComponent implements OnInit {
   }
 
   takeCard(){
-    if(!this.game.pickCardAnimation){
+    if(!this.game.pickCardAnimation && this.game.stack.length > 0){
     this.game.currentCard = this.game.stack.pop();
     this.game.pickCardAnimation = true;
 
@@ -63,11 +63,13 @@ export class GameComponent implements OnInit {
     setTimeout(() => {
       this.game.playedCards.push(this.game.currentCard);
       this.game.pickCardAnimation = false;
-      if(this.game.stack == []){
-        location.reload();
-      };
       this.saveGame();
     }, 1000);
+   
+  }else{
+    if(this.game.stack.length == 0){
+      this.newGame();
+    };
   }
   }
 

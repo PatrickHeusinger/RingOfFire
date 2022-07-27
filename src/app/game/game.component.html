@@ -3,7 +3,7 @@
 <div class="gameContent">
     <div class="cardStack">
         <!-- Card stack -->
-        <img [ngStyle]="{'right.px': i * 5}" *ngFor="let c of [0, 1, 2, 3] let i = index;" src="assets/playing_cards/card-cover.jpg">
+        <img [ngStyle]="{'right.px': i * 5}" *ngFor="let c of [0, 1, 2, 3, 4, 5, 6] let i = index;" src="assets/playing_cards/card-cover.jpg">
         <img (click)="takeCard()" class="topCard" style="right: 25px" src="assets/playing_cards/card-cover.jpg">
         <!-- Stack for played cards -->
         <img *ngFor="let card of game.playedCards" class="playedCard" src="assets/playing_cards/{{ card }}.png">
