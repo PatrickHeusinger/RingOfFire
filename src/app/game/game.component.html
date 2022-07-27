@@ -1,14 +1,23 @@
-<app-player *ngFor="let player of game.players; let i = index;" [ngStyle]="{'top.px': 100 + (i * 90)}" [playerActive]="i == game.currentPlayer" [name]="player" class="playerPosition"></app-player>
+<app-player *ngFor="let player of game.players;
+ let i = index;" [ngStyle]="{'top.px': 100 + (i * 90)}" [playerActive]="i == game.currentPlayer" [name]="player" class="playerPosition hideMobile"></app-player>
+
+<app-player-mobile *ngFor="let player of game.players;
+ let i = index;" [ngStyle]="{'left.px': 100 + (i * 90),'top.px': 0}" [playerActive]="i == game.currentPlayer" [name]="player" class="playerPosition hideDesktop"></app-player-mobile>
 
 <div class="gameContent">
     <div class="cardStack">
         <!-- Card stack -->
-        <img [ngStyle]="{'right.px': i * 5}" *ngFor="let c of [0, 1, 2, 3, 4, 5, 6] let i = index;" src="assets/playing_cards/card-cover.jpg">
-        <img (click)="takeCard()" class="topCard" style="right: 25px" src="assets/playing_cards/card-cover.jpg">
+        <!-- <img [ngStyle]="{'right.px': i * 5 }" *ngFor="let c of [0, 1, 2, 3, 4] let i = index;" src="assets/playing_cards/card-cover.jpg"> -->
+
+        <img [ngStyle]="{'right.px': i * 5 }" *ngFor="let image of game.stack let i = index;" src="assets/playing_cards/card-cover.jpg">
+
+        <!-- <img *ngFor="let image of game.stack let i = index;" [ngStyle]="{'transform':' rotate(45deg) translateX('+ i * -15.4 +'px) translateY('+ i * -20.3 +'px)'}" src="assets/playing_cards/card-cover.jpg">  -->
+
+        <img (click)="takeCard()" class="topCard" style="right: 200px" src="assets/playing_cards/card-cover.jpg">
         <!-- Stack for played cards -->
         <img *ngFor="let card of game.playedCards" class="playedCard" src="assets/playing_cards/{{ card }}.png">
         <!-- Current card (Animation) -->
-        <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class="pickCard" style="right: 25px" src="assets/playing_cards/{{ game.currentCard }}.png">
+        <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class="pickCard" style="right: 20px" src="assets/playing_cards/{{ game.currentCard }}.png">
     </div>
 </div>
 <app-game-rules [card]="game.currentCard" class="rulesCard"></app-game-rules>
