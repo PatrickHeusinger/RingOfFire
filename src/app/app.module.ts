@@ -21,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
+import { EditPlayerComponent } from './edit-player/edit-player.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
     PlayerComponent,
     DialogAddPlayerComponent,
     GameRulesComponent,
-    PlayerMobileComponent
+    PlayerMobileComponent,
+    EditPlayerComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

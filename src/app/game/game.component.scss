@@ -97,3 +97,11 @@
         margin-left: 10px;
     }
 }
+
+app-player,
+app-player-mobile {
+    cursor: pointer;
+    &:hover {
+        filter: brightness(1.15);
+    }
+}
