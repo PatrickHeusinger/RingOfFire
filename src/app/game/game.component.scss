@@ -8,6 +8,7 @@
     background-image: url('../../assets/img/table.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 .cardStack {
@@ -81,5 +82,18 @@
         left: 0;
         right: 0;
         bottom: 0;
+    }
+}
+
+.scrollContainer {
+    display: flex;
+    position: absolute;
+    overflow-x: auto;
+    overflow-y: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    app-player-mobile {
+        margin-left: 10px;
     }
 }
