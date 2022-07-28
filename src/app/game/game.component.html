@@ -11,7 +11,7 @@
 
         <img [ngStyle]="{'right.px': i * 5 }" *ngFor="let image of game.stack let i = index;" src="assets/playing_cards/card-cover.jpg">
 
-        <!-- <img *ngFor="let image of game.stack let i = index;" [ngStyle]="{'transform':' rotate(45deg) translateX('+ i * -15.4 +'px) translateY('+ i * -20.3 +'px)'}" src="assets/playing_cards/card-cover.jpg">  -->
+        <!-- <img *ngFor="let image of game.stack let i = index;" [ngStyle]="{'transform':' rotate(45deg) translateX('+ i * -15.4 +'px) translateY('+ i * -20.3 +'px)'}" src="assets/playing_cards/card-cover.jpg"> -->
 
         <img (click)="takeCard()" class="topCard" style="right: 200px" src="assets/playing_cards/card-cover.jpg">
         <!-- Stack for played cards -->

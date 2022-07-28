@@ -18,6 +18,10 @@ export class GameComponent implements OnInit {
  // currentCard: string = '';
   game: Game;
   gameId: string;
+  title = '';
+  description = '';
+  
+  
 
   constructor(private route: ActivatedRoute, private firestore: AngularFirestore, private dialog: MatDialog) { }
 
@@ -100,5 +104,17 @@ saveGame(){
     
   }
  }*/
+
+
+ setCard() {
+  if(this.game.players.length >= 2) {
+    this.title = 'Please pick a card';
+    this.description = 'Please click on the card stack to select a card';
+  } else {
+    this.title = 'Add players!';
+    this.description = 'Please add at least two players bofore you pick a card!';
+  }
+}
+
 }
 
