@@ -9,16 +9,24 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    @media (max-width: 720px) {
+        justify-content: flex-start;
+    }
 }
 
 .cardStack {
     position: relative;
-    left: 250px;
+    left: 0;
     img {
         position: absolute;
         width: 140px;
         height: 200px;
         border-radius: 15px;
+        @media (max-width: 720px) {
+            width: 70px;
+            height: 100px;
+            left: 20px;
+        }
     }
 }
 

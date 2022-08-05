@@ -18,8 +18,11 @@
     
     .startButton {
         position: absolute;
-        left: 20px;
-        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 100px;
         display: flex;
         justify-content: center;
         img {
