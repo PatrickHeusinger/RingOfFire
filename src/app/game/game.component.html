@@ -6,16 +6,23 @@
  let i = index;" [playerActive]="i == game.currentPlayer" [name]="player"></app-player-mobile>
 </div>
 
+<div *ngIf="gameOver" class="gameOver">
+
+    <div class="gameOverDisplay">
+        <h2>GAME OVER</h2>
+        <img src="assets/img/gameover.jpg">
+        <button mat-button (click)="restartGame()">RESTART</button>
+    </div>
+
+
+</div>
+
+
+
 <div class="gameContent">
     <div class="cardStack">
-        <!-- Card stack -->
-        <!-- <img [ngStyle]="{'right.px': i * 5 }" *ngFor="let c of [0, 1, 2, 3, 4] let i = index;" src="assets/playing_cards/card-cover.jpg"> -->
-
-        <img [ngStyle]="{'right.px': i * 5 }" *ngFor="let image of game.stack let i = index;" src="assets/playing_cards/card-cover.jpg">
-
-        <!-- <img *ngFor="let image of game.stack let i = index;" [ngStyle]="{'transform':' rotate(45deg) translateX('+ i * -15.4 +'px) translateY('+ i * -20.3 +'px)'}" src="assets/playing_cards/card-cover.jpg"> -->
-
-        <img (click)="takeCard()" class="topCard" style="right: 200px" src="assets/playing_cards/card-cover.jpg">
+        <!-- Card Stack -->
+        <img class="stackRotate" (click)="takeCard()" [ngStyle]="{'right.px': i * 5 } " *ngFor="let image of game.stack let i = index;" src="assets/playing_cards/card-cover.jpg">
         <!-- Stack for played cards -->
         <img *ngFor="let card of game.playedCards" class="playedCard" src="assets/playing_cards/{{ card }}.png">
         <!-- Current card (Animation) -->
@@ -23,6 +30,7 @@
     </div>
 </div>
 <app-game-rules [card]="game.currentCard" class="rulesCard"></app-game-rules>
+
 
 <button mat-fab color="primary" (click)="openDialog()" class="addButton">
     <mat-icon>add</mat-icon>

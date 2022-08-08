@@ -1,4 +1,5 @@
 .gameContent {
+    position: relative;
     height: 100vh;
     width: 100vw;
     max-width: 100%;
@@ -14,14 +15,20 @@
     }
 }
 
+.stackRotate {
+    transform: rotate(45deg);
+}
+
 .cardStack {
     position: relative;
     left: 0;
+    cursor: pointer;
     img {
         position: absolute;
         width: 140px;
         height: 200px;
         border-radius: 15px;
+        border: solid 1px rgb(80, 77, 77);
         @media (max-width: 720px) {
             width: 70px;
             height: 100px;
@@ -112,4 +119,30 @@ app-player-mobile {
     &:hover {
         filter: brightness(1.15);
     }
+}
+
+.gameOver {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    background-color: aliceblue;
+    top: 30%;
+    bottom: 30%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 3;
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+    img {
+        width: 250px;
+    }
+}
+
+.gameOverDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -34,7 +34,9 @@ import { EditPlayerComponent } from './edit-player/edit-player.component';
     DialogAddPlayerComponent,
     GameRulesComponent,
     PlayerMobileComponent,
-    EditPlayerComponent
+    EditPlayerComponent,
+    
+    
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

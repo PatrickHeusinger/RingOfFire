@@ -1,11 +1,13 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
+
 @Component({
   selector: 'app-game-rules',
   templateUrl: './game-rules.component.html',
   styleUrls: ['./game-rules.component.scss']
 })
 export class GameRulesComponent implements OnInit, OnChanges {
+
 
   cardAction = [
     { title: 'Waterfall', description: 'Everyone has to start drinking at the same time. As soon as player 1 stops drinking, player 2 may stop drinking. Player 3 may stop as soon as player 2 stops drinking, and so on.' },
@@ -41,4 +43,5 @@ export class GameRulesComponent implements OnInit, OnChanges {
       this.description = this.cardAction[cardNumber - 1].description;
     }
   }
+  
 }
