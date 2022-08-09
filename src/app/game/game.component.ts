@@ -18,9 +18,9 @@ export class GameComponent implements OnInit {
  
   game: Game;
   gameId: string;
-  title = '';
-  description = '';
-  gameOver = false;
+  title: string = '';
+  description: string = '';
+  gameOver: boolean = false;
   
   
 
