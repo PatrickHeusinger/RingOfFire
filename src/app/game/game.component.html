@@ -20,7 +20,31 @@
 
 
 <div class="gameContent">
-    <div class="cardStack">
+    <div (click)="showRules()" class="rule">?</div>
+    <div id="ruleContainer" class="ruleContent d-none">
+        <div (click)="hideRules()" class="rule">X</div>
+        <h1>Ring of Fire Drinking Game Rules</h1><br>
+        <div class="ruleSpan">
+            <span>Ace = Waterfall: Everyone has to start drinking at the same time. As soon as player 1 stops drinking, player 2 may stop drinking. Player 3 may stop as soon as player 2 stops drinking, and so on.</span><br>
+            <span>Two = You: You decide who drinks</span><br>
+            <span>Three = Me: Congrats! Drink a shot!</span><br>
+            <span>Four = Category: Pick a category and say a word within that category and go round the circle, whoever hesitates or can’t think of a word hasto drink.</span><br>
+            <span>Five = Bust A Jive: Player 1 makes a dance move. Player 2 repeats the dance move and adds a second one.</span><br>
+            <span>Six = Chicks: All girls drink.</span><br>
+            <span>Seven = Heaven: Put your hands up! The last player drinks! </span><br>
+            <span>Eight = Mate: Pick a mate. Your mate must always drink when you drink and the other way around. </span><br>
+            <span>Nine = Thumbmaster: The player with this card can put their thumb down at any time during the game and the last person to do the same has to drink. </span><br>
+            <span>Ten = Men: All men drink. </span><br>
+            <span>Jack = Quizmaster: The player with this card has to ask someone a question, if the person answers they have to drink, if they call out that you’re the question master then you have to drink</span><br>
+            <span>Queen = Never have i ever : Say something you never did. Everyone who did it has to drink.</span><br>
+            <span>King = Rule: Make a rule. Everyone needs to drink when he breaks the rule.</span>
+        </div>
+
+
+    </div>
+
+
+    <div id="stack" class="cardStack">
         <!-- Card Stack -->
         <img class="stackRotate" (click)="takeCard()" [ngStyle]="{'right.px': i * 5 } " *ngFor="let image of game.stack let i = index;" src="assets/playing_cards/card-cover.jpg">
         <!-- Stack for played cards -->
@@ -28,10 +52,13 @@
         <!-- Current card (Animation) -->
         <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class="pickCard" style="right: 20px" src="assets/playing_cards/{{ game.currentCard }}.png">
     </div>
-</div>
-<app-game-rules [card]="game.currentCard" class="rulesCard"></app-game-rules>
+
+    <app-game-rules [card]="game.currentCard" class="rulesCard"></app-game-rules>
 
 
-<button mat-fab color="primary" (click)="openDialog()" class="addButton">
+    <button class="dialogButton" color="warn" mat-fab (click)="openDialog()" class="addButton">
     <mat-icon>add</mat-icon>
   </button>
+
+
+</div>

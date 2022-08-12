@@ -29,7 +29,7 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
     this.newGame();
     this.route.params.subscribe((params) => {
-
+      
     console.log(params['id']);
 
     this.gameId = params['id'];
@@ -56,22 +56,27 @@ export class GameComponent implements OnInit {
   }
 
   restartGame(){
-    if(this.game.stack.length == 1 ){
+    if(this.game.stack.length == 0 ){
         this.newGame();
         this.game.players = [];
         this.gameOver = false;
       }
+   }
+
+   thisGameOver(){
+    if (this.game.stack.length <= 1) {
+      setTimeout(() => {
+        this.gameOver = true;
+      }, 3000);
+    
+    }
    }
  
 
   takeCard(){
     if (this.game.players.length < 2) {
     this.openDialog();
-    }
-    else if (this.game.stack.length == 1) {
-    this.gameOver = true;
-    }
-    else if(!this.game.pickCardAnimation && this.game.stack.length > 0){
+    } else if(!this.game.pickCardAnimation && this.game.stack.length > 0){
     this.game.currentCard = this.game.stack.pop();
     this.game.pickCardAnimation = true;
     this.game.currentPlayer++;
@@ -83,6 +88,7 @@ export class GameComponent implements OnInit {
       this.saveGame();
     }, 1000);
    } 
+   this.thisGameOver();
   }
 
   openDialog(): void {
@@ -122,5 +128,18 @@ editPlayer(playerId: number){
     }
   });
 }
+
+
+
+showRules(){
+  document.getElementById('ruleContainer').classList.remove('d-none');
+  document.getElementById('stack').classList.add('d-none');
 }
+hideRules(){
+  document.getElementById('ruleContainer').classList.add('d-none');
+  document.getElementById('stack').classList.remove('d-none');
+}
+
+}
+
 
